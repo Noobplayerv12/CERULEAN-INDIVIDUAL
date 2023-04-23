@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto vuejs</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" 
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+<body id="app">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="mt-5 card">
+                    <div class="card-header bg-primary text-light">
+                        Cadaste Sua tarefa
+                    </div>
+                    <div class="card-body">
+                        <input type="text" class="form-control" placeholder="O que você pretende fazer?" v-model="tarefaFazer">
+                        <button @click="criarTarefa()" class="mt-3 btn btn-success">Aperte aqui cabaço</button>
+                    </div>
+                </div>
+                <div class="mt-5 card" v-if="tarefas.length > 0">
+                    <div class="card-header bg-primary text-light">
+                        Tarefas ja cadastradas
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-group" v-for="tarefa in tarefas" :key="tarefa">
+                            <li class="list-group-item">{{ tarefa }}</li>
+                        </ul>
+                    </div>
+               </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="./assets/js/script.js"></script>
+</body>
+</html>
